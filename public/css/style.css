@@ -1,0 +1,762 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+/* ------------ General Style -------------*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #f9f9f9;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lobster', cursive;
+    padding-bottom: 10px;
+}
+
+.share {
+    float: right;
+}
+
+.share a i {
+    font-size: 20px;
+    color: blue;
+}
+
+
+/*--------------Custom Style ---------------*/
+
+
+/*--------------Navigation bar--------------*/
+
+.navbar-text a {
+    padding: 0px 10px;
+}
+
+.navbar-text a i {
+    padding: 0px 3px;
+}
+
+
+/* -------------Media Query ---------------*/
+
+@media only screen and (max-width: 375px) {
+    .navbar-text span {
+        display: none;
+    }
+    .navbar-text a {
+        padding: 0px 3px;
+    }
+}
+
+
+/*--------------Register File -------------------*/
+
+.center-div {
+    margin: 0 auto;
+}
+
+#register-container {
+    padding: 0px 90px 30px 90px;
+    border-radius: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 28px -17px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 28px -17px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 28px -17px rgba(0, 0, 0, 0.75);
+}
+
+#register h3 {
+    text-align: center;
+}
+
+#register p {
+    padding: 30px 50px;
+    text-align: center;
+    color: #999;
+}
+
+#register label {
+    color: #00ff00;
+}
+
+#register input[placeholder] {
+    font-size: 12px;
+}
+
+.location-btn {
+    border: 1px solid #999;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+.custom-btn {
+    text-align: center;
+    background-color: #00ff00;
+    color: #fff;
+}
+
+
+/* -------------Media Query ---------------*/
+
+@media only screen and (max-width: 375px) {
+    #register-container {
+        padding: 0px 5px;
+    }
+}
+
+
+/*----------------Login File -----------------*/
+
+#login-container {
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 28px -17px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 28px -17px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 28px -17px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+.login-partation {
+    padding: 20px 0px 20px 20px;
+}
+
+.login-option {
+    text-align: center;
+    font-size: 14px;
+}
+
+.register-partation {
+    background: url("img/register-partation.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    margin-right: -15px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.register-text {
+    text-align: center;
+    position: relative;
+    top: 35%;
+}
+
+a.register-link {
+    transition: 0.5s all;
+}
+
+a.register-link:hover {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+
+/*--------------Media Query ------------------------*/
+
+@media only screen and (max-width: 375px) {
+    .register-partation {
+        margin-right: 0px;
+        min-width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        min-height: 220px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .register-partation {
+        margin-right: 0px;
+        min-width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        min-height: 220px;
+    }
+}
+
+
+/* -------------Work ------------------------------ */
+
+ul#workOutput {
+    list-style-type: none;
+    background: #fff;
+    padding: 20px;
+}
+
+ul#workOutput li {
+    width: 100%;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+ul#workOutput li .work-icon {
+    color: #444;
+    float: left;
+    padding: 10px 30px;
+    border-right: 1px solid #444;
+}
+
+ul#workOutput li span {
+    padding: 5px 30px;
+}
+
+ul#workOutput li span:last-child {
+    color: #444;
+    font-size: 12px;
+}
+
+span.workTitle {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+ul#workOutput li a {
+    float: right;
+    margin-top: -11px;
+}
+
+
+/*--------------Step 1------------------------------*/
+
+#step1 h3 {
+    margin-top: 30px;
+}
+
+.own-planner-link {
+    color: #00ff00;
+}
+
+.step-progress {
+    margin-top: 30px;
+}
+
+.step-progress img {
+    width: 50px;
+}
+
+.step-progress ul {
+    text-align: center;
+}
+
+.step-progress ul li {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+}
+
+.step-progress ul li i {
+    margin-top: 20px;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 8px;
+}
+
+.step-progress ul li i::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 205px;
+    height: 5px;
+    background: #ccc;
+    left: 0px;
+    top: 80px;
+    z-index: -1;
+}
+
+.step-progress ul li:nth-child(1) i::after {
+    width: 104px;
+    left: 102px;
+}
+
+.step-progress ul li:nth-child(3) i::after {
+    width: 104px;
+}
+
+.step-progress ul li i.done-step {
+    background: steelblue;
+}
+
+.step-progress ul li i.done-step::after {
+    background: steelblue;
+}
+
+.step-progress ul li i.active-step {
+    background: #00ff00;
+}
+
+.step-progress ul li i.active-step::after {
+    background: #00ff00;
+}
+
+.time-choosing-table {
+    margin-top: 10px;
+}
+
+.time-range {
+    color: brown;
+}
+
+.time-range tr th:nth-child(-n+7) {
+    color: orange;
+}
+
+.day_by_day tr td:nth-child(1) {
+    color: steelblue;
+}
+
+.day_by_day td:not(:first-child) {
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+.day_by_day input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    left: 10px;
+    z-index: 9;
+    width: 25px;
+    height: 25px;
+}
+
+.checkmark {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    height: 25px;
+    width: 25px;
+    background-color: #ddd;
+}
+
+.day_by_day td:hover input~.checkmark {
+    background: #ccc;
+}
+
+.day_by_day input[type="checkbox"]:checked~.checkmark {
+    background: #2196f3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.day_by_day input[type="checkbox"]:checked~.checkmark:after {
+    display: block;
+}
+
+.day_by_day .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*----------------------------Step2 ----------------------*/
+
+.option-container {
+    margin: 0 auto;
+}
+
+.option-container label {
+    cursor: pointer;
+}
+
+.option-container label input[type="radio"] {
+    display: none;
+}
+
+.option-container label span {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    margin: 20px 10px;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    background: #fff;
+    color: #444;
+    border-radius: 30px;
+}
+
+.option-container label:nth-child(1) input[type="radio"]:checked~span {
+    border: 1px solid red;
+}
+
+.option-container label:nth-child(2) input[type="radio"]:checked~span {
+    border: 1px solid blue;
+}
+
+.option-container label:nth-child(3) input[type="radio"]:checked~span {
+    border: 1px solid #00ff00;
+}
+
+.go-to {
+    display: block;
+    margin: 0 auto;
+    color: #00ff00;
+}
+
+
+/*--------------------------planner -----------------*/
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.nav-item {
+    padding: 0px 10px;
+}
+
+#planner h3,
+.title-desc {
+    text-align: center;
+}
+
+.planner-table {
+    cursor: arrow;
+}
+
+.planner-table thead tr th {
+    color: brown;
+}
+
+.planner-table thead tr th:nth-child(-n+7) {
+    color: orange;
+}
+
+.planner-table tbody tr td {
+    color: #fff;
+}
+
+.planner-table tbody tr td:nth-child(1) {
+    color: steelblue;
+}
+
+.planner-table tr {
+    line-height: 70px;
+}
+
+td.task {
+    text-align: center;
+}
+
+.s1 {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.s2 {
+    background: rgba(0, 255, 0, 0.5);
+}
+
+.s3 {
+    background: rgba(0, 0, 255, 0.5);
+}
+
+.s4 {
+    background: rgba(50, 50, 0, 0.5);
+}
+
+.s5 {
+    background: rgba(50, 0, 50, 0.5);
+}
+
+.explain span {
+    padding: 3px 10px;
+}
+
+
+/*------------------------------Timeline ------------------------*/
+
+#timeline h3,
+.title-desc {
+    text-align: center;
+}
+
+#chartContainer {
+    background: red;
+    z-index: 99999999;
+}
+
+.timeline-type-form {
+    display: inline;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.timeline-type-form select {
+    background: transparent;
+    border: 0px;
+    padding: 3px 0px;
+    color: steelblue;
+    font-weight: bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    cursor: pointer;
+}
+
+p.done-task {
+    padding: 3px 0px 3px 7px;
+    border-left: 3px solid;
+    margin-bottom: 20px;
+}
+
+p.no-done-task {
+    padding: 3px 7px 3px 0px;
+    border-right: 3px solid;
+    margin-bottom: 20px;
+}
+
+
+/*--------------------------------Emotion------------------------*/
+
+#emotion h3,
+#emotion p {
+    text-align: center;
+}
+
+.carousel-item {
+    padding: 20px 0 0 0;
+}
+
+.carousel-item p {
+    font-weight: bold;
+}
+
+.carousel-item:nth-child(1) p {
+    color: pink;
+}
+
+.carousel-item:nth-child(2) p {
+    color: green;
+}
+
+.carousel-item:nth-child(3) p {
+    color: red;
+}
+
+.carousel-item:nth-child(4) p {
+    color: blue;
+}
+
+.carousel-item:nth-child(5) p {
+    color: orange;
+}
+
+.carousel-item:nth-child(6) p {
+    color: gold;
+}
+
+.carousel-item:nth-child(7) p {
+    color: steelblue;
+}
+
+
+/* -------------------------------setting ------------------*/
+
+.setting-card {
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(176, 176, 176, 1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(176, 176, 176, 1);
+    box-shadow: 0px 0px 5px 0px rgba(176, 176, 176, 1);
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 0px 25px 0 0;
+}
+
+.setting-card ul {
+    list-style: none;
+}
+
+.setting-card ul li {
+    padding: 25px 0px;
+    border-bottom: 1px solid rgba(176, 176, 176, 1);
+}
+
+.setting-card ul li:last-child {
+    border-bottom: 0px;
+}
+
+.setting-card ul li i {
+    float: right;
+}
+
+.setting-card ul li a {
+    transition: 0.3s all linear;
+}
+
+.setting-card ul li a:hover {
+    padding-left: 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+.rating {
+    border: none;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 2.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
+}
+
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating>input:checked~label,
+
+/* show gold star when clicked */
+
+.rating:not(:checked)>label:hover,
+
+/* hover current star */
+
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+
+/* hover current star when changing rating */
+
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+
+/* lighten current selection */
+
+.rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
+
+
+/*---------------------------------Profile----------------------*/
+
+#profile label {
+    color: #00ff00;
+}
+
+#profile input[type="text"],
+#profile input[type="email"] {
+    background: transparent;
+}
+
+
+/*---------------------------------Notification-----------------*/
+
+#notification h3,
+#notification p {
+    text-align: center;
+}
+
+#tabs h6.section-title {
+    color: #eee;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: orange;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#notification table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+#notification table tbody tr {
+    background-color: #fff;
+    margin-bottom: 10px;
+    line-height: 50px;
+}
+
+#notification table thead tr th {
+    border: none;
+}
+
+#notification table tbody tr td {
+    border-top: none;
+}
+
+.task-rounded {
+    font-weight: bolder;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.left {
+    float: left;
+    padding: 0px 5px;
+    border-right: 1px solid #999;
+    margin-right: 6px;
+}
+
+.badge {
+    padding: 5px;
+}
+
+.badge-danger {
+    color: pink;
+}
+
+.badge-warning {
+    color: #F7F8C4;
+}
+
+.badge-success {
+    color: #96FAB0;
+}

@@ -1,6 +1,8 @@
 @extends('member/layout')
 
 @section('customlinkcss')
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 	{{-- Material kit --}}
 	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
 	<link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
@@ -43,7 +45,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<button class="btn btn-sm custom-btn">Add &nbsp;<i class='fas fa-plus'></i></button>
+						<button class="btn btn-sm custom-btn" id="add-btn">Add &nbsp;<i class='fas fa-plus'></i></button>
 					</div>
 				</div>
 			</div>
@@ -52,20 +54,28 @@
 		<div class="row">
 			<div class="col-md-9 center-div">
 				<ul id="workOutput"></ul>
-				<button class="btn btn-sm btn-block custom-btn save-btn">Save</button>
+					<button class="btn btn-sm btn-block custom-btn save-btn" id="save-btn">Save</button>
 			</div>
 		</div>
 	</div>
 </section>
 
+
+
 <script>
+
+$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+							}
+		});
 
 $('.save-btn').hide();
 
 	
 var work=[];
 
-	$('.btn').click(function() {
+	$('#add-btn').click(function() {
 
 		var fromTime = $('#fromTime').val();
 		var toTime = $('#toTime').val();
@@ -74,10 +84,10 @@ var work=[];
 
 		
 		work.push({
-			'fromTimeData' : fromTime,
-			'toTimeData' : toTime,
-			'category' : category,
-			'iconData' : icon
+			'job' : category,
+			'fromTime' : fromTime,
+			'toTime' : toTime,
+			'iconData' : icon,
 		});
 
 		$('#workOutput').empty("");
@@ -85,8 +95,8 @@ var work=[];
 		for(var i=0;i<work.length;i++){
 
 			// console.log(work[i].iconData);
-			$('#workOutput').append("<li><i class='fas fa-"+work[i].iconData+" work-icon'></i><span class='workTitle'>"+work[i].category+
-				"</span><br><span>"+work[i].fromTimeData+" to "+work[i].toTimeData+"</span><a href='#' class='remove_field col-md-1' splice-id='"+i+"'><i class='fas fa-times'></i></a></li>");
+			$('#workOutput').append("<li><i class='fas fa-"+work[i].iconData+" work-icon'></i><span class='workTitle'>"+work[i].job+
+				"</span><br><span>"+work[i].fromTime+" to "+work[i].toTime+"</span><a href='#' class='remove_field col-md-1' splice-id='"+i+"'><i class='fas fa-times'></i></a></li>");
 
 		}
 
@@ -109,6 +119,20 @@ var work=[];
 			}
 			
 		})
+
+		
+
+		$('#save-btn').click(function(){
+
+			$.ajax({
+           type: "POST",
+           url: "/dailyWorks",
+           data: { workData: work },
+           dataType: "json",
+           success: function (data) { console.log(data) }
+       });
+
+		});
 
 	});	
 </script>

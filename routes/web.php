@@ -16,6 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('/login','MemberPagesController@login')->name('login');
-Route::get('/register','MemberPagesController@register')->name('register');
+// Route::get('/register','MemberPagesController@register')->name('register');
 Route::get('/data','MemberPagesController@data')->name('data');
 
+
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::resource('dailyWorks', 'DailyWorksController');

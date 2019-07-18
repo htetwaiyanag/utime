@@ -1,7 +1,6 @@
 @extends('member/layout')
 
 @section('customlinkcss')
-	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 	{{-- Material kit --}}
 	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
@@ -53,8 +52,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 center-div">
-				<ul id="workOutput"></ul>
-					<button class="btn btn-sm btn-block custom-btn save-btn" id="save-btn">Save</button>
+				<ul id="workOutput">
+					
+				</ul>
+				<form action="{{ route('dailyWorks.store') }}" id="dailyWorkForm" method="POST">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -63,12 +65,6 @@
 
 
 <script>
-
-$.ajaxSetup({
-			headers: {
-				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-							}
-		});
 
 $('.save-btn').hide();
 
@@ -100,6 +96,16 @@ var work=[];
 
 		}
 
+		$('#dailyWorkForm').html("");
+
+		for(var n=0;n<work.length;n++){
+			
+			$('#dailyWorkForm').append('@csrf<input type="text" name="dailyWork['+n+'][job]" value="'+work[n]["job"]+'"><input type="text" name="dailyWork['+n+'][fromTime]" value="'+work[n]["fromTime"]+'"><input type="text" name="dailyWork['+n+'][toTime]" value="'+work[n]["toTime"]+'"><input type="text" name="dailyWork['+n+'][iconData]" value="'+work[n]["iconData"]+'"><br>');
+		}
+
+		$('#dailyWorkForm').append('<input type="submit" value="Save" class="btn btn-sm btn-block custom-btn">');
+		
+
 		if(work.length>0){
 			$('.save-btn').show();
 		}
@@ -118,23 +124,24 @@ var work=[];
 				work.splice(splice_id,1);
 			}
 			
-		})
+		});
 
 		
 
-		$('#save-btn').click(function(){
-
-			$.ajax({
-           type: "POST",
-           url: "/dailyWorks",
-           data: { workData: work },
-           dataType: "json",
-           success: function (data) { console.log(data) }
-       });
-
-		});
+		
 
 	});	
+	// $('#save-btn').click(function(){
+
+	// $.ajax({
+	// 		type: "POST",
+	// 		url: "/dailyWorks",
+	// 		data: { workData: work },
+	// 		dataType: "json",
+	// 		success: function (data) { console.log(data) }
+	// });
+
+	// });
 </script>
 
 

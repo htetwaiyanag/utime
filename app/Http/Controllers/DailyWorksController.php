@@ -36,14 +36,88 @@ class DailyWorksController extends Controller
      */
     public function store(Request $request)
     {
-        if(\Request::ajax()){
-            // return Response::json($request->all());
+        // $dailyWork = new DailyWork;
 
-            $table = new DailyWork;
+    
+        $array = filter_input_array(INPUT_POST);
 
-            $table->insert($request->workData);
-            return view('member/step1');
+        $data = $array['dailyWork'];
+        
+        // dd($data[0]['job']);
+        
+        
+        $dailyWorkDetails = [];
+
+        for($i= 0; $i < count($data); $i++){
+            $dailyWorkDetails[] = [
+                'job' => $data[$i]['job'],
+                'fromTime' => $data[$i]['fromTime'],
+                'toTime' => $data[$i]['toTime'],
+                'iconData' => $data[$i]['iconData'],
+            ];
         }
+
+        // dd($dailyWorkDetails);
+
+        // $jobs = $request->input('job');
+        // $fromTimes = $request->input('fromTime');
+        // $toTimes = $request->input('toTime');
+        // $iconDatas = $request->input('iconData');
+
+        // dd($jobs);
+
+        // $data = array(
+        //     array('job'=>$jobs)
+        // );
+
+        DailyWork::insert($dailyWorkDetails);
+
+        // dd($jobs);
+
+        // foreach($jobs as $j){
+        //     // $dailyWork->job = $j;
+        //     dd($j);
+            
+        // }
+
+        // dd($jobs);
+
+        // dd($jobs[1]);
+        
+        // $dailyWork->fromTime = $fromTimes;
+        // $dailyWork->toTime = $toTimes;
+        // $dailyWork->iconData = $iconDatas;
+
+        // foreach($jobs as $j){
+        //     $dailyWork->job = $j;
+        //     $dailyWork->save();
+        // }
+
+        // dd($dailyWork->fromTime);
+
+        // foreach($fromTimes as $ft){
+        //     $dailyWork->fromTime = $ft;
+        //     $dailyWork->save();
+        // }
+
+        // foreach($toTimes as $tT){
+        //     $dailyWork->toTime = $tT;
+        //     $dailyWork->save();
+        // }
+
+        // foreach($iconDatas as $iD){
+        //     $dailyWork->iconData = $iD;
+        //     $dailyWork->save();
+        // }
+
+        // $dailyWork->save();
+        
+        return 'success';
+
+        // $table = new DailyWork;
+
+        // $table->insert($request);
+        // return view('member/step1');
     }
 
     /**

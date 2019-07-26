@@ -3,19 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Response;
-use \App\DailyWork;
-use \App\User;
+use App\User;
 
-class DailyWorksController extends Controller
+class PlannerController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +17,10 @@ class DailyWorksController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
 
-        dd($user->dailyWork);
+        return view('member/planner/index')->with('plans',$user->plan);
+        
+        // dd($user->plan);
+
     }
 
     /**
@@ -47,30 +41,7 @@ class DailyWorksController extends Controller
      */
     public function store(Request $request)
     {
-        // $dailyWork = new DailyWork;
-
-    
-        $array = filter_input_array(INPUT_POST);
-
-        $data = $array['dailyWork'];
-        
-        $dailyWorkDetails = [];
-
-        for($i= 0; $i < count($data); $i++){
-            $dailyWorkDetails[] = [
-                'job' => $data[$i]['job'],
-                'fromTime' => $data[$i]['fromTime'],
-                'toTime' => $data[$i]['toTime'],
-                'iconData' => $data[$i]['iconData'],
-                'user_id' => auth()->user()->id
-            ];
-        } 
-
-        DailyWork::insert($dailyWorkDetails);
-        
-        return redirect()->route('step1');
-
-        
+        //
     }
 
     /**

@@ -306,75 +306,123 @@ ul#workOutput li a {
     background: #00ff00;
 }
 
-.time-choosing-table {
-    margin-top: 10px;
+.slidecontainer {
+    width: 100%;
 }
 
-.time-range {
-    color: brown;
+.input_fields_wrap input[type='text'] {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #999;
+    outline: 0;
 }
 
-.time-range tr th:nth-child(-n+7) {
-    color: orange;
+.input_fields_wrap input[type='text']:focus {
+    border: none;
+    outline: 0;
 }
 
-.day_by_day tr td:nth-child(1) {
-    color: steelblue;
-}
-
-.day_by_day td:not(:first-child) {
-    position: relative;
-    user-select: none;
-    cursor: pointer;
-}
-
-.day_by_day input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    left: 10px;
-    z-index: 9;
-    width: 25px;
-    height: 25px;
-}
-
-.checkmark {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    height: 25px;
-    width: 25px;
-    background-color: #ddd;
-}
-
-.day_by_day td:hover input~.checkmark {
-    background: #ccc;
-}
-
-.day_by_day input[type="checkbox"]:checked~.checkmark {
-    background: #2196f3;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.day_by_day input[type="checkbox"]:checked~.checkmark:after {
-    display: block;
-}
-
-.day_by_day .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
     height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+ul#plan-output {
+    background: #FFFBE6;
+    padding: 20px 30px;
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    -webkit-box-shadow: 0px 0px 46px -31px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 46px -31px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 46px -31px rgba(0, 0, 0, 1);
+}
+
+ul#plan-output li {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+ul#plan-output li img {
+    float: left;
+}
+
+ul#plan-output li span {
+    margin-left: 20px;
+}
+
+ul#plan-output li span.subject-title {
+    text-transform: capitalize;
+    font-size: 17px;
+}
+
+ul#plan-output li span:last-child {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul#plan-output li a.remove_field {
+    float: right;
+    margin-top: -10px;
+    color: #333;
+}
+
+
+/*---------------------------Plan Success Page-----------  */
+
+.row.mid-div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 600px;
+    padding: 100px 0px;
+    margin-left: -300px;
+    margin-top: -100px;
+}
+
+p.planner-success-msg {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #999;
+}
+
+span.user-name {
+    color: orange;
+    text-transform: uppercase;
+}
+
+a.btn.c-btn {
+    color: #fff;
 }
 
 

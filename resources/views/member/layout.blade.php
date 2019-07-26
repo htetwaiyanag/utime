@@ -3,7 +3,8 @@
 <head>
 	<title>Utime</title>
 
-	
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 	{{-- Bootstrap --}}
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -13,17 +14,23 @@
 
 	<!-- Fontawesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	
 
 	<!-- fonts import -->
 	<link href="https://fonts.googleapis.com/css?family=Lobster|Raleway|Saira+Semi+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
 
 	@yield('customlinkcss')
 
 	<!-- Javascript -->
-	<script src="{{ asset('/js/app.js') }}"></script>
 	<script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
 	<script src="{{ asset('/js/popper.min.js') }}"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="{{ asset('/js/app.js') }}"></script>
+	
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
 	<script src="https://rawgit.com/creativetimofficial/material-kit/master/assets/js/core/bootstrap-material-design.min.js"></script>

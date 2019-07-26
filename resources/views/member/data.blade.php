@@ -71,14 +71,26 @@ $('.save-btn').hide();
 	
 var work=[];
 
+function createHiddenForm(){
+	$('#dailyWorkForm').html("");
+
+		for(var n=0;n<work.length;n++){
+			
+				$('#dailyWorkForm').append('@csrf<input type="text" name="dailyWork['+n+'][job]" value="'+work[n]["job"]+'"><input type="text" name="dailyWork['+n+'][fromTime]" value="'+work[n]["fromTime"]+'"><input type="text" name="dailyWork['+n+'][toTime]" value="'+work[n]["toTime"]+'"><input type="text" name="dailyWork['+n+'][iconData]" value="'+work[n]["iconData"]+'"><br>');
+		}
+
+		$('#dailyWorkForm').append('<input type="submit" value="Save" class="btn btn-sm btn-block custom-btn">');
+}
+
 	$('#add-btn').click(function() {
 
+		// fetch data from form
 		var fromTime = $('#fromTime').val();
 		var toTime = $('#toTime').val();
 		var category = $('#category').val();
 		var icon = $('#category option:selected').attr('icon');
 
-		
+		//create array with fetched data
 		work.push({
 			'job' : category,
 			'fromTime' : fromTime,
@@ -86,8 +98,10 @@ var work=[];
 			'iconData' : icon,
 		});
 
+		//clear previous displayed data
 		$('#workOutput').empty("");
 
+		//display data output
 		for(var i=0;i<work.length;i++){
 
 			// console.log(work[i].iconData);
@@ -96,52 +110,27 @@ var work=[];
 
 		}
 
-		$('#dailyWorkForm').html("");
-
-		for(var n=0;n<work.length;n++){
-			
-			$('#dailyWorkForm').append('@csrf<input type="text" name="dailyWork['+n+'][job]" value="'+work[n]["job"]+'"><input type="text" name="dailyWork['+n+'][fromTime]" value="'+work[n]["fromTime"]+'"><input type="text" name="dailyWork['+n+'][toTime]" value="'+work[n]["toTime"]+'"><input type="text" name="dailyWork['+n+'][iconData]" value="'+work[n]["iconData"]+'"><br>');
-		}
-
-		$('#dailyWorkForm').append('<input type="submit" value="Save" class="btn btn-sm btn-block custom-btn">');
-		
-
-		if(work.length>0){
-			$('.save-btn').show();
-		}
-
-		
+		createHiddenForm();
 
 		$('.remove_field').on("click", function(e){ //user click on remove text
 			e.preventDefault(); 
 			$(this).parent('li').remove();
 
-			if(work.length==1){
+			if(work.length===1){
 				work=[];
-				$('.save-btn').hide();
+				// $('.save-btn').hide();
+				$('#dailyWorkForm').html("");
 			}else{
 				var splice_id = $(this).attr('splice-id');
 				work.splice(splice_id,1);
+				createHiddenForm();
 			}
 			
 		});
 
-		
-
-		
-
 	});	
-	// $('#save-btn').click(function(){
 
-	// $.ajax({
-	// 		type: "POST",
-	// 		url: "/dailyWorks",
-	// 		data: { workData: work },
-	// 		dataType: "json",
-	// 		success: function (data) { console.log(data) }
-	// });
-
-	// });
+	
 </script>
 
 

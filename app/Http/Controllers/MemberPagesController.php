@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class MemberPagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function login()
     {
     	return view ('member/index');
@@ -19,6 +24,14 @@ class MemberPagesController extends Controller
     public function data()
     {
     	return view('member/data');
+    }
+
+    public function step1(){
+        return view('member/step1');
+    }
+
+    public function planner(){
+        return view('member/planSuccess');
     }
 
     

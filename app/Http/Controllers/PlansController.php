@@ -3,19 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Response;
-use \App\DailyWork;
-use \App\User;
+use App\Plan;
 
-class DailyWorksController extends Controller
+class PlansController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -23,10 +14,7 @@ class DailyWorksController extends Controller
      */
     public function index()
     {
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id);
-
-        dd($user->dailyWork);
+        
     }
 
     /**
@@ -47,30 +35,27 @@ class DailyWorksController extends Controller
      */
     public function store(Request $request)
     {
-        // $dailyWork = new DailyWork;
-
-    
         $array = filter_input_array(INPUT_POST);
 
-        $data = $array['dailyWork'];
+        $data = $array['plan'];
         
-        $dailyWorkDetails = [];
+        $planDetails = [];
 
         for($i= 0; $i < count($data); $i++){
-            $dailyWorkDetails[] = [
-                'job' => $data[$i]['job'],
-                'fromTime' => $data[$i]['fromTime'],
-                'toTime' => $data[$i]['toTime'],
-                'iconData' => $data[$i]['iconData'],
+            $planDetails[] = [
+                'subject' => $data[$i]['subject'],
+                'priority' => $data[$i]['priority'],
+                'givingHour' => $data[$i]['givingHour'],
+                'specificDay' => $data[$i]['specificDay'],
+                'emotionLevel' => $data[$i]['emotionLevel'],
                 'user_id' => auth()->user()->id
             ];
-        } 
+        }
 
-        DailyWork::insert($dailyWorkDetails);
+        Plan::insert($planDetails);
         
-        return redirect()->route('step1');
+        return redirect()->route('planSuccess');
 
-        
     }
 
     /**
